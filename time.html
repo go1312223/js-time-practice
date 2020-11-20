@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>123</title>
+    <script>
+       
+        function nowtt() {
+            var time = new Date();
+            var year = time.getFullYear();
+            var month = time.getMonth() + 1;
+            var day = time.getDate();
+            var hour = time.getHours();
+            var minute = time.getMinutes();
+            var second = time.getSeconds();
+
+            if (minute < 10) minute = '0' + minute;
+            if (second < 10) second = '0' + second;
+
+            var temp = year + "/" + month + "/" + day + " " + hour + ": " + minute + ":" + second;
+            document.getElementById('time').innerHTML = temp;            
+            setTimeout('nowtt()', 1000);
+            
+            return temp;
+        }     
+    </script>
+</head>
+<body onload="nowtt()">
+    <span id="time"></span>    
+</body>
+</html>
